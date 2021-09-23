@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Маргарита Ли](https://up.htmlacademy.ru/javascript/24/user/1577741).
-* Наставник: `Руслан Бреев`.
+* Наставник: [Руслан Бреев](https://up.htmlacademy.ru/javascript/24/user/488939).
 
 ---
 
