@@ -1,19 +1,17 @@
-function getRandomNumber(min, max) {
-  if (min < 0 || max < 0) {
-    return false;
+const getRandomNumber = (min, max) => {
+  if(min < 0 || max < 0 || min >= max) {
+    return 0;
   }
+
   min = Math.ceil(min);
   return Math.floor(Math.random() * (max - min)) + min;
-}
-getRandomNumber(0, 10);//basicweb.ru/javascript/js_math_random.php
+};
+
+getRandomNumber(0, -8);
+
+//basicweb.ru/javascript/js_math_random.php
 
 //Кекстограм
 
-const getString = function(str, maxLength) {
-  if(str <= maxLength) {
-    return true;
-  }else{
-    return false;
-  }
-};
-getString(50, 120);
+const checkStringLength = (str, maxStringLength) => str <= maxStringLength;
+checkStringLength();
