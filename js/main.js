@@ -44,36 +44,37 @@ const COMMENTS = {
   max: 3,
 };
 
-const getRandom = function (min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const getRandomArrayElement = (array) => array[getRandomNumber(0, array.length - 1)];
 
-const getRandomArrayElement = function (array) {
-  return array[getRandom(0, array.length - 1)];
-};
+const createComments = (amount) => {
+  const comments = [];
 
-const getCommentsArray = function (randomAmount) {
-
-  for (let i = 0; i < randomAmount; i++) {
-    COMMENTS = {
-      avatar: 'img/avatar-{getRandom(1, 6)}.svg',
-      message: getRandomArrayElement(COMMENTS_LIST),
+  for(let i = 0; i < amount; i++) {
+    comments[i] = {
+      id: 1,
+      avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
+      message: getRandomArrayElement(COMMENTS),
       name: getRandomArrayElement(AUTHOR_NAMES),
     };
   }
 
-  return COMMENTS;
+  return comments;
 };
 
-const getQuantityArray = function (objectsAmount) {
-  for (let i = 1; i <= objectsAmount; i++) {
-    objectsAmount = {
-      url: `photos/${i}.jpg`,
+const getQuantityArray = (objectsAmount) => {
+  const photos = [];
+
+  for(let i = 0; i < objectsAmount; i++) {
+     photos[i] = {
+      id: i + 1,
+      url: `photos/${i + 1}.jpg`,
       description: 'photo description',
-      likes: getRandom(LIKES.min, LIKES.max),
-      comments: getCommentsArray(getRandom(COMMENTS.min, COMMENTS.max)),
-    };
+      likes: getRandomNumber(LIKES_AMOUNT.min, LIKES_AMOUNT.max),
+      comments: createComments(getRandomNumber(COMMENTS_AMOUNT.min, COMMENTS_AMOUNT.max)),
+    }
   }
 
-  return objectsAmount;
+  return photos;
 };
+
+getQuantityArray(COMMENTS_AMOUNT);
