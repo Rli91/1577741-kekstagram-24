@@ -34,12 +34,12 @@ const AUTHOR_NAMES = [
 
 const OBJECTS_AMOUNT = 25;
 
-const LIKES = {
+const LIKES_AMOUNT = {
   min: 15,
   max: 200,
 };
 
-const COMMENTS = {
+const COMMENTS_AMOUNT = {
   min: 1,
   max: 3,
 };
@@ -77,4 +77,4 @@ const getQuantityArray = (objectsAmount) => {
   return photos;
 };
 
-getQuantityArray(COMMENTS_AMOUNT);
+getQuantityArray(OBJECTS_AMOUNT);
